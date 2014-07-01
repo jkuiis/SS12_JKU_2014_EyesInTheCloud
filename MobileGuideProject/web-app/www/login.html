@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile.js"></script>
+    <script src="js/MobileServices.Web.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.css"/>
+    <title>Mobile Guide</title>
+</head>
+<body>
+<div id="loginPage" data-role="page">
+    <div data-role="header" data-id="navHeader" data-position="fixed">
+        <h1>Login</h1>
+
+        <div data-role="navbar">
+            <a href="login.html" data-ajax="false">Login</a>
+            <a href="add_route.html" data-ajax="false">New route</a>
+            <a href="sel_route.html" data-ajax="false">Navigate</a>
+        </div>
+    </div>
+    <div data-role="content">
+
+        <div id="signInDiv" style="display:blok;">
+            <label for="emailInTXT">E-Mail Address:</label><input type='email' id='emailInTXT' required="required"
+                                                                  placeholder='Enter E-Mail Address'/><br>
+            <label for="passInTXT">Password:</label><input type='password' id='passInTXT' required="required"
+                                                           placeholder='Enter password'/><br>
+
+            <button type="button" id="signInBTN">Sign in</button>
+            <br>
+            <button type='button' id="signUpBTN">Sign up</button>
+            </br>
+        </div>
+        <!-- login form -->
+
+        <div id="signUpDiv" style="display:none;">
+            <label for="nameTXT">Name:</label><input type='text' id='nameTXT' required="required"
+                                                     placeholder='Enter Name'/><br>
+
+            <label for="nickNameTXT">Nickname:</label><input type='text' id='nickNameTXT' placeholder='Enter Nickname'/><br>
+
+            <label for="emailUpTXT">E-Mail Address:</label><input type='email' id='emailUpTXT' required="required"
+                                                                  placeholder='Enter E-Mail Address'/><br>
+
+            <label for="passUpTXT">Password:</label><input type='password' id='passUpTXT' required="required"
+                                                           placeholder='Enter password'/><br>
+
+            <label for="passTXT">Confirm the password:</label><input type="password" id="passTXT" required="required"
+                                                                     placeholder="Reenter the password"/><br>
+
+            <button type='submit' id="submitBTN">Sign up</button>
+            <br>
+        </div>
+        <!-- create account form -->
+
+        <div id="signOutDiv" style="display:none;">
+            <p id="infoP"></p>
+
+            <p>If you want to use this application you can choose an option from the above navigation menu. If you want
+                to sign in with another username please click the "Sign out" button!</p>
+            <button id="signOutBTN" type="button">Sign out</button>
+        </div>
+        <!-- intro page -->
+    </div>
+    <!--content -->
+</div>
+<script type="text/javascript" src="js/index.js">
+</script>
+<script type="text/javascript" src="js/login.js">
+</script>
+</body>
+</html>

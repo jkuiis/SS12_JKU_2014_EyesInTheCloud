@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi"/>
+
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery.mobile.js"></script>
+    <script src="js/MobileServices.Web.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.css"/>
+    <title>Mobile Guide</title>
+</head>
+<body>
+<div id="addPage" data-role="page">
+    <div data-role="header" data-id="navHeader" data-position="fixed">
+        <h1>Create a new route</h1>
+
+        <div data-role="navbar">
+            <a href="login.html" data-ajax="false">Login</a>
+            <a href="add_route.html" data-ajax="false">New route</a>
+            <a href="sel_route.html" data-ajax="false">Navigate</a>
+        </div>
+    </div>
+
+    <div data-role="content">
+
+        <div id="step1" style="display:block;">
+            <h3>Route details</h3>
+            <label for="routeNameTXT">Name:</label><input id="routeNameTXT" type="text" required="required"/>
+
+            <label for="routeDescriptionTXT">Description:</label><input id="routeDescriptionTXT" type="text"/>
+        </div>
+        <!-- step1 -->
+
+        <div id="step2" style="display:none;">
+            <h3>Add a new point</h3>
+            <select id="modeSEL">
+                <option value="nameDiv"><h5>Search by name</h5></option>
+                <option value="neiDiv"><h5>Search by neighborhood</h5></option>
+                <option value="newDiv"><h5>Create a new point</h5></option>
+            </select>
+
+            <div id="chooseDiv">
+                <div id="nameDiv" style="display:block;">
+                    <label for="pointsTXT">Insert the name</label><input id="pointsTXT" type="text"/>
+                    <select id="pointsDL" data-role="listview">
+                        <!-- will be populate from db -->
+                    </select>
+                </div>
+
+                <div id="neiDiv" style="display:none;">
+                    <label for="visiblePointsDL">Choose a point from your neighborhood</label>
+                    <select id="visiblePointsDL" data-role="listview">
+                        <!-- will be populate from db -->
+                    </select>
+                </div>
+
+                <div id="newDiv" style="display:none;">
+                    <label for="itemNameTXT">Name</label><input id="itemNameTXT" type="text" required="required"/>
+                    <label for="itemDescriptionTXT">Description</label><input id="itemDescriptionTXT" type="text"/>
+
+                    <!-- the visibility and popup radiuses  have a constant value
+                    and the latitude and longitude will be taken from the device geolocation -->
+                    <label for="typeDL">Select a type</label>
+                    <select id="typeDL" data-role="listview">
+                        <!-- will be populate from db -->
+                    </select>
+                    <label for="categoryDL">Select a category</label>
+                    <select id="categoryDL" data-role="listview">
+                        <!-- will be populate from db -->
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- step2-->
+
+        <div id="step3" style="display:none;">
+            <!-- add instruction-->
+            <h3>Add instruction</h3>
+            <label for="instructionNameTXT">Name</label><input id="instructionNameTXT" type="text"/>
+
+            <label for="instructionDescriptionTXT">Description</label><input id="instructionDescriptionTXT" type="text"
+                                                                             required="required"/>
+        </div>
+        <!-- step3-->
+
+        <div id="step4" style="display:none;">
+            <h3>Check and edit the route</h3>
+            <!-- the route can be edited:
+            - name and description of the route
+            - a select with the name of the items and an edit button -> edit page ->
+            - the name, description, instruction and type and category of the item can be modified
+            -->
+            <label for="eRouteNameTXT">Route name</label><input id="eRouteNameTXT" type="text"/></br>
+            <label for="eRouteDescriptionTXT">Route description</label><input id="eRouteDescriptionTXT"
+                                                                              type="text"/></br>
+            <select id="itemsDL">
+                <!-- will be populate from db -->
+            </select>
+            <label for="eItemNameTXT">Item name</label><input id="eItemNameTXT" type="text" disabled="disabled"/></br>
+            <label for="eItemDescriptionTXT">Item description</label><input id="eItemDescriptionTXT" type="text"
+                                                                            disabled="disabled"/></br>
+            <label for="eInstructionNameTXT">Instruction name</label><input id="eInstructionNameTXT" type="text"/></br>
+            <label for="eInstructionDescriptionTXT">Instruction description</label><input
+                id="eInstructionDescriptionTXT" type="text"/></br>
+
+
+        </div>
+        <!-- step4 -->
+    </div>
+    <!-- content-->
+
+    <div data-role="footer">
+        <div id="stepDiv"></div>
+        <div id="prevDiv" class="footerButton" style="display:none;">
+            <button id="prevBTN" type="button">Add another way point</button>
+        </div>
+        <div class="footerButton">
+            <button id="nextBTN" type="button"></button>
+        </div>
+    </div>
+    <!-- footer -->
+</div>
+<script type="text/javascript" src="js/index.js">
+</script>
+<script type="text/javascript" src="js/addRoute.js">
+</script>
+</body>
+</html>
